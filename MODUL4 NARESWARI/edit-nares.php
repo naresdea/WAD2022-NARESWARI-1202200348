@@ -25,8 +25,8 @@ $result = mysqli_query($conn, $query);
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav navbar-dark">
-                        <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-                        <a class="nav-link active" href="additem.php">MyCar</a>
+                        <a class="nav-link active" aria-current="page" href="home-nares.php">Home</a>
+                        <a class="nav-link active" href="add.php">MyCar</a>
                     </div>
                 </div>
             </div>

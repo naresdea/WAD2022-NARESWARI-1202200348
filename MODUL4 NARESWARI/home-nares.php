@@ -25,8 +25,8 @@ $result = mysqli_query($conn, $query);
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav navbar-dark">
-                    <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-                    <a class="nav-link active" href="additem.php">MyCar</a>
+                    <a class="nav-link active" aria-current="page" href="home-nares.php">Home</a>
+                    <a class="nav-link active" href="add.php">MyCar</a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ $result = mysqli_query($conn, $query);
                 <h1 class="text-start">Selamat Datang Di </br> Showroom Nareswari</h1>
                 <p class="text-start">Showroom adalah tempat untuk memamerkan produk tertentu, seperti otomotif, furniture, dll yang berfungsi untuk meningkatkan pemasaran. Showroom ada yg bersifat permanen (mis showroom otomotif untuk jangka panjang) dan sementara (hanya selama waktu tertentu/pameran).</p>
                 <div class="d-grid gap-2">
-                    <a class="btn btn-primary" href="myitem.php">MyCar</a>
+                    <a class="btn btn-primary" href="list.php">MyCar</a>
                 </div></br>
                 <div class="container text-center">
                     <div class="row">

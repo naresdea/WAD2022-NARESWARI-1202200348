@@ -1,54 +1,3 @@
-<?php
-    if(!isset($_SESSION)){
-        session_start();
-    }
-
-    require "../register.php";
-    require "../connector.php";
-
-    if(isset($_POST["register"])){
-        if(registrasi($_POST)){
-            echo "<script> 
-            alert('Berhasil Registrasi!');  
-        </script>";
-        }else{
-            echo mysqli_error($conn);
-        }
-    }
-
-
-    if (isset($_SESSION["login"])){
-        header("Location: home-nares.php");
-        exit;
-    }
-
-    if(isset($_POST["login"])) {
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-
-        $result = mysqli_query($connect_user, "SELECT * FROM users WHERE email = '$email'");
-
-        if(mysqli_num_rows($result) === 1){
-            $row = mysqli_fetch_assoc($result);
-            if (password_verify($password, $row["password"])) {
-                $_SESSION["email"] = $row["email"];
-                $_SESSION["name"] = $row["name"];
-                $_SESSION["number"] = $row["number"];
-                $_SESSION["login"] = true; 
-
-                if(isset($_POST["remember"])){
-                    setcookie("id", $row["id"], time()+60);
-                    setcookie("key", hash("sha256", $row["email"]));
-                }
-                $_SESSION["message"] = "Berhasil Login";
-                header("Location: home-nares.php ");
-                exit;
-            };
-        }
-        $error = true ;
-    }
-?>
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -64,15 +13,7 @@
 </head>
 
 <body>
-<!--HEADER HEADER HEADER-->
-<header>
-	<nav class="navbar navbar-expand-lg navbar-info-hover-black static-top bg-info ps-5 shadow">
-		<div class="col-6">
-			<div class="mx-auto" style="width: 200px;">
-                <img class="card-img-top" src="asset\image\bmw i4.jpeg" alt="bmwi4">
-			</div>
-		</div>
-	</nav>
+
 </header>
 <!--MAIN MAIN MAIN-->
 <div class="container-fluid">
@@ -83,9 +24,8 @@
                 </div>
             <div class="col-md-6">
 			<h2 class="text-dark text-left">Login</h2>
-			<hr style='border-width:2;color:black;background-color:black;width:75%;margin:auto'>
-			<div class="card-body">		
-				<form action="" method="post">
+            <div class="card-body">		
+				<form action="login.php" method="post">
 					<!--mail-->
 					<label for="email" class="form-label" style="padding-left: 10px">Email</label>
 					<input type="text" class="form-control label" id="email" aria-describedby="email" name="email" required>
@@ -98,11 +38,11 @@
 						<label class="form-check-label" for="flexCheckDefault">Remember Me</label>
 					<!--submit-->
 						<div style="padding-top: 10px;" class="d-flex justify-content-center">
-							<button type="Submit" class="btn btn-primary" style="width: 35%" name="daftar">Login</button>
+							<button type="Submit" class="btn btn-primary" style="width: 35%" name="login">Login</button>
 						</div>
 				</form>
 				<p class="text-dark text-center">Anda sudah punya akun?
-					<a href="login.php"> Daftar</a>
+					<a href="register-nares.php"> Daftar</a>
 				</p>
 			</div>
 		</div>

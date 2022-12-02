@@ -20,7 +20,6 @@
                 </div>
             <div class="col-md-6">
 			<h2 class="text-dark text-left">Register</h2>
-			<hr style='border-width:2;color:black;background-color:black;width:75%;margin:auto'>
 			<div class="card-body">		
 				<form action="" method="post">
 					<!--mail-->
@@ -44,7 +43,7 @@
 						</div>
 				</form>
 				<p class="text-dark text-center">Anda sudah punya akun?
-					<a href="login.php"> Login</a>
+					<a href="login-nares.php"> Login</a>
 				</p>
 			</div>
 		</div>

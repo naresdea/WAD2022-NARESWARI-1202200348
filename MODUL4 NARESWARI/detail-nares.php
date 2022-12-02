@@ -25,8 +25,8 @@ $result = mysqli_query($conn, $query);
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav navbar-dark">
-                        <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-                        <a class="nav-link active" href="additem.php">MyCar</a>
+                        <a class="nav-link active" aria-current="page" href="home-nares.php">Home</a>
+                        <a class="nav-link active" href="add.php">MyCar</a>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@ $result = mysqli_query($conn, $query);
                       <input type='radio' name='status' id='belum' value='Belum Lunas' " . (($data["status_pembayaran"] == 'Belum Lunas') ? 'checked="checked"' : "") . " style='width: 15px; margin-top: 17px; height: 15px; margin-right:10px;'>
                       <label for='belum' style='margin-top: 15px;'>Belum Lunas</label>
                     </span>
-                    <a href='edititem.php?id=" . $data["id_mobil"] . "' class='btn btn-primary' style='margin-top: 40px;'>Edit</a>
+                    <a href='edit.php?id=" . $data["id_mobil"] . "' class='btn btn-primary' style='margin-top: 40px;'>Edit</a>
             </form>
         </div>
         ";

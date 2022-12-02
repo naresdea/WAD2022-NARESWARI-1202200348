@@ -3,11 +3,11 @@ require "connector.php";
 function registrasi ($data){
     global $connect_user;
 
-    $email = strtolower(stripslashes($data["email"]));
-    $name = strtolower(stripslashes($data["name"]));
-    $number = strtolower(stripslashes($data["number"]));
-    $password = mysqli_real_escape_string($connect_user,$data["password"]);
-    $confpass = mysqli_real_escape_string($connect_user,$data["confpass"]);
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $number = $_POST['number'];
+    $password = $_POST['password'];
+    $confpass = $_POST['confpass'];
 
 
     $result = mysqli_query($connect_user, "SELECT email FROM users WHERE email = '$email' ");
